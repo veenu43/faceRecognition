@@ -1,7 +1,11 @@
 
 import cv2
 import face_recognition
+import dlib
 
+print(f"cv2 version {cv2.__version__}")
+print(f"face_recognition version {face_recognition.__version__}")
+print(f"dlib version {dlib.__version__}")
 image = face_recognition.load_image_file("20190715_123912.jpg")
 face_locations = face_recognition.face_locations(image)
 
@@ -27,6 +31,7 @@ for index,current_face_location in enumerate(all_face_locations):
     # Slice image to get faces
     current_face_image = image_to_detect[top_pos:bottom_pos,left_pos:right_pos]
     cv2.imshow("Face No: "+str(index),current_face_image)
+    cv2.waitKey(0)
 
 
 
