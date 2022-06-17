@@ -3,8 +3,8 @@ import face_recognition
 import dlib
 
 # capture the video from default camera
-#webcam_video_stream = cv2.VideoCapture(0)
-webcam_video_stream = cv2.VideoCapture('20160424_161800.mp4')
+webcam_video_stream = cv2.VideoCapture(0)
+
 if not webcam_video_stream.isOpened():
     print("Cannot open camera")
     exit()
