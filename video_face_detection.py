@@ -2,9 +2,8 @@ import cv2
 import face_recognition
 import dlib
 
-# capture the video from default camera
-#webcam_video_stream = cv2.VideoCapture(0)
-webcam_video_stream = cv2.VideoCapture('20160424_161800.mp4')
+# capture the video from video
+webcam_video_stream = cv2.VideoCapture('images/20160424_161800.mp4')
 if not webcam_video_stream.isOpened():
     print("Cannot open camera")
     exit()
@@ -21,7 +20,7 @@ while True:
 
     # Detect all faces in the image
     # arguments are image, no_of_times_to_upsample,model
-    all_face_locations = face_recognition.face_locations(current_frame_small,no_of_times_to_upsample=2,model='hog')
+    all_face_locations = face_recognition.face_locations(current_frame_small,model='hog')
 
     # looping through the face locations
     for index, current_face_location in enumerate(all_face_locations):

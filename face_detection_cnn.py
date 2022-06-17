@@ -13,14 +13,9 @@ face_locations = face_recognition.face_locations(image)
 image_to_detect = cv2.imread("images/manypeoples.jpg")
 #cv2.imshow("test",image_to_detect)
 
-# Hog model
-# find total faces in image
-all_face_locations = face_recognition.face_locations(image_to_detect,number_of_times_to_upsample=3,model="hog")
-print("There are {} faces in this image".format(len(all_face_locations)))
-
 # CNN Model
-#all_face_locations = face_recognition.face_locations(image_to_detect,number_of_times_to_upsample=1,model="cnn")
-#print("There are {} faces in this image".format(len(all_face_locations)))
+all_face_locations = face_recognition.face_locations(image_to_detect,number_of_times_to_upsample=1,model="cnn")
+print("There are {} faces in this image".format(len(all_face_locations)))
 
 
 # Extract faces from image
