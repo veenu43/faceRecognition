@@ -7,7 +7,7 @@ pip install cmake
 conda install -c conda-forge dlib
 pip install face_recognition
 
-
+# Need for face emotion training
 conda install tensorflow
 pip install tensorflow
 

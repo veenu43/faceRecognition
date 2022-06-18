@@ -79,7 +79,7 @@ for index,current_face_location in enumerate(all_face_locations):
     # ***************Emotion Prediction Ends***************
 
 # showing the current face with rectangle drawn
-cv2.imshow("Webcam Video ", current_frame)
+cv2.imshow("Image Face Emotions ", current_frame)
 cv2.waitKey(0)
 
 
