@@ -12,10 +12,10 @@ webcam_video_stream = cv2.VideoCapture(0)
 face_exp_model = model_from_json(open("datasets/facial_expression_model_structure.json","r").read())
 
 # load weights into model
-face_exp_model.load_weights("datasets/facial_expression_model_structure.h5")
+face_exp_model.load_weights("datasets/facial_expression_model_weights.h5")
 
 # list of emotions labels
-emotions_label = ('angry','fear','happy','sad','surprise','neutral')
+emotions_label = ('angry','fear','happy','sad','surprise','neutral','1','2','3','4')
 
 
 if not webcam_video_stream.isOpened():
@@ -45,7 +45,6 @@ while True:
         bottom_pos = bottom_pos*4
 
         # ***************Face detection Starts***************
-
         # printing the location of current face
         print('Found face {} at top: {},right:{},bottom:{},left:{}'.format(index + 1, top_pos, right_pos, bottom_pos,
                                                                            left_pos))
@@ -55,11 +54,9 @@ while True:
         # Draw rectangle around face
         # Argument: 1. left & top position2. right & bottom 3. color: BGR  4. thickness of the border
         cv2.rectangle(current_frame,(left_pos,top_pos),(right_pos,bottom_pos),(0,0,255),2)
-
         # ***************Face detection ends***************
 
         # ***************Emotion detection Starts***************
-
         # preprocess input, convert it to am image like as the data in dataset
         # convert to grayscale
         current_face_image = cv2.cvtColor(current_face_image,cv2.COLOR_BGR2GRAY)
@@ -76,8 +73,6 @@ while True:
         # pixels are in range of [0,255].normalize all pixels in scale of [0,1]
         # 0 : completely black and 255 : completely black
         img_pixels /= 255
-
-
         # ***************Emotion detection Ends***************
 
         # ***************Emotion Prediction Starts***************
@@ -86,14 +81,13 @@ while True:
 
         # find max indexed prediction value(0 till 7)
         max_index = np.argmax(exp_predictions[0])
-
+        print(f"max_index: {max_index}")
         # get corresponding label from emotions label
         emotions_label = emotions_label[max_index]
 
-        #display the name as text in the image
+        # display the name as text in the image
         font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(current_frame,emotions_label,(left_pos,bottom_pos),font,0.5,(233,255,255),1)
-
+        cv2.putText(current_frame,emotions_label,(left_pos,bottom_pos),font,0.5,(255,255,255),1)
         # ***************Emotion Prediction Ends***************
 
     # showing the current face with rectangle drawn
