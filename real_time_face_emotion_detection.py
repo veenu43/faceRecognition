@@ -83,11 +83,11 @@ while True:
         max_index = np.argmax(exp_predictions[0])
         print(f"max_index: {max_index}")
         # get corresponding label from emotions label
-        emotions_label = emotions_label[max_index]
+        emotion_label = emotions_label[max_index]
 
         # display the name as text in the image
         font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(current_frame,emotions_label,(left_pos,bottom_pos),font,0.5,(255,255,255),1)
+        cv2.putText(current_frame,emotion_label,(left_pos,bottom_pos),font,0.5,(255,255,255),1)
         # ***************Emotion Prediction Ends***************
 
     # showing the current face with rectangle drawn
