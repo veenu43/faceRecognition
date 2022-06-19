@@ -31,8 +31,7 @@ while True:
         right_pos = right_pos*4
         bottom_pos = bottom_pos*4
         # printing the location of current face
-        print('Found face {} at top: {},right:{},bottom:{},left:{}'.format(index + 1, top_pos, right_pos, bottom_pos,
-                                                                           left_pos))
+        #print('Found face {} at top: {},right:{},bottom:{},left:{}'.format(index + 1, top_pos, right_pos, bottom_pos,left_pos))
         # Slicing the current face from current main page
         current_face_image = current_frame[top_pos:bottom_pos, left_pos:right_pos]
 
@@ -72,7 +71,7 @@ while True:
         # Argument: 1. left & top position2. right & bottom 3. color: BGR  4. thickness of the border
         cv2.rectangle(current_frame,(left_pos,top_pos),(right_pos,bottom_pos),(0,0,255),2)
         font = cv2.FONT_HERSHEY_DUPLEX
-        cv2.putText(current_frame,gender+" "+age+" "+"yrs",(left_pos,bottom_pos),font,0.5,(0,255,0),1)
+        cv2.putText(current_frame,gender+" "+age+" "+"yrs",(left_pos,bottom_pos+20),font,0.5,(0,255,0),1)
     # showing the current face with rectangle drawn
     cv2.imshow("Webcam Video ", current_frame)
 
