@@ -9,10 +9,10 @@ from keras.models import model_from_json
 webcam_video_stream = cv2.VideoCapture(0)
 
 # face expression model initialization
-face_exp_model = model_from_json(open("datasets/facial_expression_model_structure.json","r").read())
+face_exp_model = model_from_json(open("../datasets/facial_expression_model_structure.json", "r").read())
 
 # load weights into model
-face_exp_model.load_weights("datasets/facial_expression_model_weights.h5")
+face_exp_model.load_weights("../datasets/facial_expression_model_weights.h5")
 
 # list of emotions labels
 emotions_label = ('angry','fear','happy','sad','surprise','neutral','1','2','3','4')

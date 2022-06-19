@@ -45,8 +45,8 @@ while True:
 
         # ***************Gender Prediction Starts***************
         gender_label_list = ['Male','Female']
-        gender_protext = "datasets/gender_deploy.prototxt"
-        gender_caffemodel = "datasets/gender_net.caffemodel"
+        gender_protext = "../datasets/gender_deploy.prototxt"
+        gender_caffemodel = "../datasets/gender_net.caffemodel"
 
         # Create Model from files and provide blob as input
         gender_cov_net = cv2.dnn.readNet(gender_caffemodel,gender_protext)
@@ -57,8 +57,8 @@ while True:
 
         # ***************Gender Prediction Starts***************
         age_label_list = ['(0-2)','(4-6)','(8-12)','(15-20)','(25-32)','(38-43)','(48-53)','(60-100)']
-        age_protext = "datasets/age_deploy.prototxt"
-        age_caffemodel = "datasets/age_net.caffemodel"
+        age_protext = "../datasets/age_deploy.prototxt"
+        age_caffemodel = "../datasets/age_net.caffemodel"
         # Create Model from files and provide blob as input
         age_cov_net = cv2.dnn.readNet(age_caffemodel, age_protext)
         age_cov_net.setInput(current_face_image_blob)

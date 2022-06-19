@@ -6,11 +6,11 @@ import dlib
 print(f"cv2 version {cv2.__version__}")
 print(f"face_recognition version {face_recognition.__version__}")
 print(f"dlib version {dlib.__version__}")
-image = face_recognition.load_image_file("images/20190715_123912.jpg")
+image = face_recognition.load_image_file("../images/20190715_123912.jpg")
 face_locations = face_recognition.face_locations(image)
 
 # Read Image
-image_to_detect = cv2.imread("images/manypeoples.jpg")
+image_to_detect = cv2.imread("../images/manypeoples.jpg")
 #cv2.imshow("test",image_to_detect)
 
 # CNN Model
