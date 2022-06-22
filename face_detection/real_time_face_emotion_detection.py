@@ -43,7 +43,7 @@ while True:
         top_pos = top_pos*4
         right_pos = right_pos*4
         bottom_pos = bottom_pos*4
-
+        left_pos = left_pos * 4
         # ***************Face detection Starts***************
         # printing the location of current face
         print('Found face {} at top: {},right:{},bottom:{},left:{}'.format(index + 1, top_pos, right_pos, bottom_pos,

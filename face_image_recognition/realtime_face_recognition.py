@@ -47,6 +47,7 @@ while True:
         top_pos = top_pos*4
         right_pos = right_pos*4
         bottom_pos = bottom_pos*4
+        left_pos = left_pos * 4
         # printing the location of current face
         #print('Found face at location top: {},right:{},bottom:{},left:{}, right: {}'.format(top_pos,right_pos,bottom_pos,left_pos,right_pos))
 
