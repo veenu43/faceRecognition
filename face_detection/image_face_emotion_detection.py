@@ -9,11 +9,11 @@ from keras.models import model_from_json
 print(f"cv2 version {cv2.__version__}")
 print(f"face_recognition version {face_recognition.__version__}")
 print(f"dlib version {dlib.__version__}")
-image1 = face_recognition.load_image_file("../images/20190715_123912.jpg")
+image1 = face_recognition.load_image_file("../images/testing/trump-modi.jpg")
 face_locations = face_recognition.face_locations(image1)
 
 # Read Image
-current_frame = cv2.imread("../images/manypeoples.jpg")
+current_frame = cv2.imread("../images/testing/trump-modi.jpg")
 #cv2.imshow("test",image_to_detect)
 
 # Hog model
