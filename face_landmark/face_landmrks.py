@@ -31,3 +31,6 @@ for face_landmarks in face_landmarks_list:
 
     # Display Image
     pil_image.show()
+
+    # you can also save a copy of the new image to disk
+    # pil_image.save("vinit1.jpg")
