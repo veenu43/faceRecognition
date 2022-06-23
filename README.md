@@ -14,3 +14,6 @@ pip install tensorflow
 conda install keras
 pip install keras
 
+
+# Face Landmarks
+pip install pillow
