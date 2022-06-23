@@ -31,3 +31,4 @@ face_distances = face_recognition.face_distance(known_face_encodings,image_to_re
 # print face distance for each known sample to the unknown image
 for i,face_distance in enumerate(face_distances):
     print("The calculated face distance is {:.2} from sample image {}".format(face_distance,known_face_names[i]))
+    print("The matching percentage is {} against sample image {}".format(round(((1-float(face_distance))*100),2), known_face_names[i]))
